@@ -34,6 +34,16 @@ body{
   color: #adb5bd;
 }
 
+.btn{
+  width: 320px;
+  border: 1px solid #e9ecef;
+  padding: .9em 1em;
+  background-color: #003049;
+  color: #e9ecef;
+  font-size: 1em;
+  cursor: pointer;
+}
+
 #form{
   max-width: 320px;
   width: 100vw;

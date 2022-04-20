@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import bgimg from '../assets/img1.jpg'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom';
 
-export default function Form() {
+function Signin() {
 
     const{register, handleSubmit, watch, formState:{errors}} = useForm();
     const onSubmit = (data) => {
-        console.log(data);
     }
 
   return (
@@ -18,12 +18,13 @@ export default function Form() {
 
                 <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
                     <input type="text" {...register("username")} placeholder='username'/>
-                    <input type="text" {...register("password")}placeholder='password'/>
-                    <input type="text" {...register("confirmpwd")}placeholder='confirm password'/>
+                    <input type="password" {...register("password")}placeholder='password'/>
+                    <input type="password" {...register("confirmpwd")}placeholder='confirm password'/>
                     <input type="text" {...register("mobile", {required:true, maxLength:10})}placeholder='mobile number'/>
                     {errors.mobile?.type === "required" && "Mobile Number is Required"}
                     {errors.mobile?.type === "maxLength" && "Max Length Exceed"}
-                    <button className='btn'>Sign In</button>
+                    <button className='btn'>button</button>
+                    
                 </form>
             </div>
             <div className='col-2'>
@@ -33,3 +34,5 @@ export default function Form() {
     </section>
   )
 }
+
+export default Signin
